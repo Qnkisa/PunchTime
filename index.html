@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Punch Time</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+
+    <audio src="audio/beep-warning-6387.mp3" id="round-end-warning-sound"></audio>
+    <audio src="audio/boxing-bell.mp3" id="boxing-bell-sound"></audio>
+    
+    <header>
+        <nav>
+            <div class="nav-logo">
+                <p>PunchTime</p>
+                <ion-icon name="timer-outline" class="logo-icon"></ion-icon>
+            </div>
+            <ul id="menu">
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a href="about.html">About</a>
+                </li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </div>
+        </nav>
+    </header>
+
+    <div class="index-hero">
+        <div class="index-hero-details">
+            <div class="index-hero-details-block">
+                <p>Rounds:</p>
+                <input type="text" id="rounds-count" value="12">
+            </div>
+            <div class="index-hero-details-block">
+                <p>Round Time:</p>
+                <input type="text" id="round-time-input" value="02:00">
+            </div>
+            <div class="index-hero-details-block">
+                <p>Rest Time:</p>
+                <input type="text" id="rest-time" value="01:00">
+            </div>
+            <div class="index-hero-details-block">
+                <p>Round End Warning:</p>
+                <input type="text" id="round-end-warning" value="00:10">
+            </div>
+        </div>
+        <div class="index-hero-timer">
+            <div class="index-hero-timer-round-time">
+                <span id="round-time">02:00</span>
+            </div>
+            <div class="index-hero-timer-round-count">
+                <p>Round:</p>
+                <div class="index-hero-timer-round-count-result">
+                    <span id="current-round">1</span><span>/</span><span id="total-rounds">12</span>
+                </div>
+            </div>
+            <div class="index-hero-timer-start">
+                <button id="start-timer">Start</button>
+            </div>
+            <div class="index-hero-timer-reset">
+                <button id="reset-timer">Reset</button>
+            </div>
+        </div>
+        <div class="index-hero-total-time">
+            <div class="index-hero-total-time-small">
+                <div class="index-hero-work-rest">
+                    <p>Work Time:</p>
+                    <span id="work-time">02:00</span>
+                </div>
+                <div class="index-hero-work-rest">
+                    <p>Rest Time:</p>
+                    <span id="rest-time-brah">01:00</span>
+                </div>
+            </div>
+            <div class="index-hero-total-time-big">
+                <p>Total Time:</p>
+                <span id="total-time">00:00:00</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="timer-started">
+        <div class="timer-started-blur" id="timer-started-blur"></div>
+        <div class="timer-started-div" id="timer-started-div">
+            <p>Get Ready!</p>
+            <span id="timer-seconds-count">3</span>
+        </div>
+    </div>
+
+    <div class="timer-finished">
+        <div class="timer-finished-blur" id="timer-finished-blur"></div>
+        <div class="timer-finished-div" id="timer-finished-div">
+            <p>Your workout is finished!</p>
+            <ion-icon name="checkmark-done-circle-outline" id="workout-done"></ion-icon>
+            <a href="#" id="back-to-the-app">Back To The App</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-top">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <p>@ 2023 PunchTime</p>
+            <span>All Rights Reserved.</span>
+        </div>
+    </footer>
+
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="scripts/script.js"></script>
+</body>
+</html>

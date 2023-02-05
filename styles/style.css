@@ -1,0 +1,797 @@
+@import url('https://fonts.googleapis.com/css2?family=Unbounded&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --ff-headings:'Unbounded', cursive;
+    --ff-text:'Helvetica', 'Arial', sans-serif;
+}
+
+body{
+    background-color: black;
+}
+
+header{
+    background-color: black;
+    padding: 1rem 5rem;
+    color: white;  
+    border-bottom: 2px solid white;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1600px;
+    margin: auto;
+    padding: 0 2.5rem;
+}
+
+.nav-logo{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+    user-select: none;
+}
+
+.nav-logo p{
+    font-size: 2.5rem;
+    font-family: var(--ff-headings);
+}
+
+.logo-icon{
+    font-size: 3rem;
+}
+
+nav ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    gap: 40px;
+}
+
+nav ul li a{
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: white;
+    display: flex;
+}
+
+nav ul li a::before{
+    content: "[";
+    color: white;
+    display: block;
+    padding-right: 10px;
+    position: relative;
+    bottom: 2px;
+    opacity: 0;
+    transition: opacity .3s;
+}
+
+nav ul li a:hover::before{
+    opacity: 0.5;
+}
+
+nav ul li a::after{
+    content: "]";
+    color: white;
+    display: block;
+    padding-left: 10px;
+    position: relative;
+    bottom: 2px;
+    opacity: 0;
+    transition: opacity .3s;
+}
+
+nav ul li a:hover::after{
+    opacity: 0.5;
+}
+
+.hamburger{
+    position: absolute;
+    right: 2rem;
+    top: 1.4rem;
+    cursor: pointer;
+    display: none;
+}
+
+.hamburger-line{
+    display: block;
+    height: 3px;
+    width: 30px;
+    background-color: white;
+    border-radius: 5px;
+    margin-bottom: 7px;
+}
+
+
+/*index hero start*/
+
+
+.index-hero{
+    color: white;
+    margin: 200px auto;
+    text-align: center;
+    max-width: 1600px;
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+    align-items: center;
+    padding: 0 2.5rem;
+}
+
+.index-hero-details-block{
+    text-align: left;
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    gap: 15px;
+    position: relative;
+    border-bottom: 1px solid white;
+    padding-bottom: 30px;
+}
+
+.index-hero-details-block:last-child{
+    margin-bottom: 0;
+}
+
+.index-hero-details-block p{
+    font-size: 1.25rem;
+    font-family: var(--ff-text);
+}
+
+.index-hero-details-block input{
+    position: absolute;
+    right: 0;
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    padding-left: 10px;
+    font-family: var(--ff-headings);
+    font-size: 1.25rem;
+}
+
+.index-hero-timer{
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background-color: white;
+    color: black;
+    margin: auto;
+    box-shadow: 0 0 25px 4px rgba(255, 255, 255, 1);
+    z-index: 75;
+}
+
+.index-hero-timer-round-time{
+    margin: 40px auto;
+    font-size: 5rem;
+    font-family: var(--ff-text);
+}
+
+.index-hero-timer-round-count{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.index-hero-timer-round-count p{
+    font-size: 2rem;
+    font-family: var(--ff-headings);
+}
+
+.index-hero-timer-round-count-result span{
+    margin: 0 2px;
+    font-size: 2rem;
+    font-family: var(--ff-text);
+}
+
+.index-hero-timer-start{
+    margin: 30px auto 10px;
+}
+
+.index-hero-timer-start button{
+    background-color: black;
+    color: white;
+    font-family: var(--ff-headings);
+    font-size: 1.5rem;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all .3s;
+    cursor: pointer;
+    z-index: 80;
+}
+
+.index-hero-timer-start button:hover{
+    color: black;
+    background-color: white;
+}
+
+.index-hero-timer-reset button{
+    background-color: white;
+    color: black;
+    font-family: var(--ff-headings);
+    font-size: 0.8rem;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all .3s;
+    cursor: pointer;
+}
+
+.index-hero-timer-reset button:hover{
+    background-color: black;
+    color: white;
+}
+
+.index-hero-total-time{
+    display: block;
+    padding: 1rem;
+    border-radius: 20px;
+    border: 2px solid white;
+}
+
+.index-hero-total-time-big{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+.index-hero-total-time-big p{
+    font-size: 1.5rem;
+    font-family: var(--ff-headings);
+}
+
+.index-hero-total-time-big span{
+    font-size: 2rem;
+    font-family: var(--ff-text);
+}
+
+.index-hero-total-time-small{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px auto;
+    gap: 40px;
+}
+
+.index-hero-work-rest{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    padding: 10px 20px;
+    color: black;
+    background-color: white;
+    border-radius: 5px;
+    font-family: var(--ff-headings);
+}
+
+.index-hero-work-rest span{
+    font-family: var(--ff-text);
+}
+
+/*footer start*/
+
+footer{
+    width: 100%;
+    border-top: 2px solid white;
+    text-align: center;
+    font-family: var(--ff-text);
+    color: white;
+}
+
+.footer-top{
+    max-width: 1600px;
+    margin: 25px auto 75px;
+    padding: 0 2.5rem;
+}
+
+.footer-top ul{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+}
+
+.footer-top ul li a{
+    font-size: 1.5rem;
+    color: white;
+    text-decoration: none;
+    display: flex;
+}
+
+.footer-top ul li a::before{
+    content: "[";
+    color: white;
+    display: block;
+    padding-right: 10px;
+    position: relative;
+    bottom: 2px;
+    opacity: 0;
+    transition: opacity .3s;
+}
+
+.footer-top ul li a:hover::before{
+    opacity: 0.5;
+}
+
+.footer-top ul li a::after{
+    content: "]";
+    color: white;
+    display: block;
+    padding-left: 10px;
+    position: relative;
+    bottom: 2px;
+    opacity: 0;
+    transition: opacity .3s;
+}
+
+.footer-top ul li a:hover::after{
+    opacity: 0.5;
+}
+
+.footer-bottom{
+    padding-bottom: 30px;
+}
+
+.footer-bottom p{
+    font-size: 2rem;
+    font-family: var(--ff-headings);
+    margin-bottom: 25px;
+}
+
+.footer-bottom span{
+    font-size: 1.25rem;
+    opacity: 0.5;
+    font-family: var(--ff-text);
+}
+
+
+
+
+
+/*about container start*/
+
+.about-container{
+    margin: 125px auto;
+    text-align: center;
+    max-width: 1600px;
+    padding: 0 2.5rem;
+    color: white;
+}
+
+.about-container h1{
+    font-size: 3.5rem;
+    margin-bottom: 50px;
+    font-family: var(--ff-headings);
+}
+
+.about-container p{
+    margin-bottom: 30px;
+    font-size: 1.5rem;
+    font-family: var(--ff-text);
+    line-height: 50px;
+}
+
+.about-container p a{
+    color: black;
+    padding: 10px;
+    background-color: white;
+    display: inline-block;
+}
+
+/*timer finished start*/
+.timer-finished-blur{
+    height: 100vh;
+    overflow-y: hidden;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1500;
+    overflow: hidden;
+    display: none;
+}
+
+.timer-finished-blur.active{
+    display: block;
+}
+
+.timer-finished-div{
+    position: fixed;
+    z-index: 1600;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 2rem;
+    background-color: white;
+    color: black;
+    border-radius: 20px;
+    text-align: center;
+    display: none;
+}
+
+.timer-finished-div.active{
+    display: block;
+}
+
+.timer-finished-div p{
+    font-size: 2.5rem;
+    font-family: var(--ff-headings);
+    margin-bottom: 25px;
+}
+
+#workout-done{
+    display: block;
+    margin: auto;
+    font-size: 10rem;
+}
+
+.timer-finished-div a{
+    text-decoration: none;
+    font-family: var(--ff-headings);
+    font-size: 1.75rem;
+    padding: 15px 30px;
+    color: white;
+    margin-top: 30px;
+    display: block;
+    background-color: black;
+    border: 3px solid black;
+    transition: all .3s;
+    border-radius: 20px;
+}
+
+.timer-finished-div a:hover{
+    background-color: white;
+    color: black;
+}
+
+/*timer started div start*/
+.timer-started-blur{
+    height: 100vh;
+    overflow-y: hidden;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1500;
+    overflow: hidden;
+    display: none;
+}
+
+.timer-started-div{
+    position: fixed;
+    z-index: 1600;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 2rem;
+    background-color: white;
+    color: black;
+    border-radius: 20px;
+    text-align: center;
+    display: none;
+}
+
+.timer-started-div p{
+    font-size: 2.5rem;
+    font-family: var(--ff-headings);
+    margin-bottom: 25px;
+}
+
+.timer-started-div span{
+    font-size: 5rem;
+    display: inline-block;
+    padding: 2rem 4rem;
+    border-radius: 50%;
+    color: white;
+    background-color: black;
+    font-family: var(--ff-text);
+}
+
+/*media queriest start*/
+
+@media (max-width:1250px) {
+    .index-hero{
+        display: flex;
+        flex-direction: column;
+        margin: 75px auto;
+        order: 1;
+        margin-bottom: 100px;
+        gap: 50px;
+    }
+
+    .index-hero-details{
+        order: 2;
+        width: 500px;
+    }
+
+    .index-hero-total-time{
+        order: 3;
+    }
+}
+
+@media (max-width:750px) {
+
+    nav ul{
+        position: fixed;
+        display: block;
+        width: 100%;
+        left: 0;
+        background-color: black;
+        text-align: center;
+        top: -100%;
+        transition: top .5s;
+        z-index: 100;
+        border-bottom: 2px solid white;
+    }
+
+    nav ul.active{
+        top: 68px;
+    }
+
+    nav ul li{
+        margin: 50px auto;
+    }
+
+    nav ul li a{
+        margin: auto;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .hamburger{
+        display: block;
+    }
+
+    header{
+        padding: 1rem 2rem;
+    }
+
+    .nav-logo{
+        z-index: 200;
+    }
+
+    .nav-logo p{
+        font-size: 1.5rem;
+    }
+
+    .logo-icon{
+        font-size: 2.25rem;
+    }
+
+    .hamburger{
+        z-index: 200;
+    }
+
+    .hamburger.active .hamburger-line:first-child{
+        transform: translateY(10px) rotate(45deg);
+        transition: transform .3s;
+    }
+
+    .hamburger.active .hamburger-line:nth-child(2){
+        opacity: 0;
+        transition: opacity .3s;
+    }
+
+    .hamburger.active .hamburger-line:last-child{
+        transform: translateY(-10px) rotate(-45deg);
+        transition: transform .3s;
+    }
+
+    .about-container{
+        margin: 50px auto;
+        padding: 0 1rem;
+    }
+
+    .about-container h1{
+        font-size: 2.5rem;
+        margin-bottom: 40px;
+    }
+
+    .about-container p{
+        font-size: 1.2rem;
+        line-height: 40px;
+        margin-bottom: 20px;
+    }
+
+    .about-container p a{
+        padding: 5px 10px;
+    }
+
+    .timer-finished-div{
+        padding: 1rem;
+    }
+
+    .timer-finished-div p{
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+
+    #workout-done{
+        font-size: 6rem;
+    }
+
+    .timer-finished-div a{
+        padding: 10px 20px;
+        margin-top: 10px;
+        font-size: 1rem;
+    }
+
+    .timer-started-div{
+        padding: 1rem;
+    }
+
+    .timer-started-div p{
+        font-size: 1.5rem;
+    }
+
+    .timer-started-div span{
+        font-size: 3rem;
+        padding: 1rem 2rem;
+    }
+}
+
+@media (max-width:600px) {
+    .index-hero{
+        margin: 50px auto;
+    }
+
+    .index-hero-timer{
+        width: 280px;
+        height: 280px;
+    }
+
+    .index-hero-timer-round-time{
+        font-size: 3.25rem;
+        margin: 20px auto 25px;
+    }
+
+    .index-hero-timer-round-count{
+        margin-bottom: 10px;
+    }
+
+    .index-hero-timer-round-count p{
+        font-size: 1.5rem;
+    }
+
+    .index-hero-timer-round-count span{
+        font-size: 1.5rem;
+    }
+
+    .index-hero-timer-start{
+        margin: 25px auto 10px;
+    }
+
+    .index-hero-timer-start button{
+        font-size: 1.15rem;
+    }
+
+    .index-hero-timer-reset button{
+        font-size: 0.7rem;
+        padding: 7px 14px;
+    }
+
+    .index-hero-details{
+        width: 280px;
+    }
+
+    .index-hero-details-block{
+        margin-bottom: 35px;
+        padding-bottom: 20px;
+    }
+
+    .index-hero-details-block p{
+        font-size: 1rem;
+    }
+
+    .index-hero-total-time{
+        padding: 1rem;
+        border: 1px solid white;
+    }
+
+    .index-hero-total-time p{
+        font-size: 1.25rem;
+    }
+
+    .index-hero-total-time span{
+        font-size: 1.25rem;
+    }
+
+    .index-hero{
+        padding: 0 0.5rem;
+    }
+
+    nav{
+        padding: 0 0.5rem;
+    }
+
+    .footer-top{
+        margin: 25px auto 35px;
+        padding: 0 0.5rem;
+    }
+
+    .footer-top ul{
+        display: block;
+        width: 250px;
+        margin: auto;
+    }
+
+    .footer-top ul li{
+        margin: 20px auto;
+    }
+
+    .footer-top ul li a{
+        justify-content: center;
+    }
+
+    .footer-bottom p{
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+
+    .footer-bottom span{
+        font-size: 0.85rem;
+    }
+
+    .index-hero-total-time-small{
+        display: block;
+    }
+
+    .index-hero-work-rest{
+        margin-bottom: 10px;
+    }
+
+    .index-hero-total-time-small p{
+        font-size: 0.85rem;
+    }
+
+    .index-hero-total-time-small span{
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width:400px) {
+    .timer-finished-div{
+        padding: 0.5rem;
+    }
+
+    .timer-finished-div p{
+        font-size: 1rem;
+        margin-bottom: 5px;
+    }
+
+    #workout-done{
+        font-size: 4rem;
+    }
+
+    .timer-finished-div a{
+        padding: 7px 14px;
+        margin-top: 5px;
+        font-size: 0.75rem;
+    }
+
+    .timer-started-div{
+        padding: 0.5rem;
+    }
+
+    .timer-started-div p{
+        font-size: 1rem;
+        margin-bottom: 15px;
+    }
+
+    .timer-started-div span{
+        font-size: 2.5rem;
+        padding: 10px 20px;
+    }
+}
